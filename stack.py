@@ -12,7 +12,7 @@ class Stack:
 
     def pop(self):
         if self.top is None:
-            raise IndexError("Pop on empty Stack")
+            return None
         pop = self.top
         self.top = pop.pointer
         return pop.data
@@ -40,7 +40,8 @@ class Node:
 def main():
     stack = Stack()
 
-    print(stack.isEmpty()) 
+    print(stack.isEmpty())
+    print(stack.pop())
     stack.push(1)
     print(stack.isEmpty())    
     stack.push(2)

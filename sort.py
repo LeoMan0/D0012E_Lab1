@@ -4,24 +4,20 @@ class Sort:
     def __init__(self):
         pass
 
+
     def sortStack(self, inputStack):
         tempStack = Stack()
-        #Whil is not empty
+
         while not inputStack.isEmpty():
             rightHand = inputStack.pop()
+            leftHand = tempStack.pop()
 
-            if tempStack.isEmpty():
-                tempStack.push(rightHand)
-            
-            else:
+            while leftHand is not None and leftHand < rightHand:
+                inputStack.push(leftHand)
                 leftHand = tempStack.pop()
-                #tempStack.push(leftHand)
-
-                while not tempStack.isEmpty() and leftHand >= rightHand:
-                    inputStack.push(leftHand)
-                    leftHand = tempStack.pop()
-
+            
+            if leftHand is not None:
                 tempStack.push(leftHand)
-                tempStack.push(rightHand)
+            tempStack.push(rightHand)
 
         return tempStack
