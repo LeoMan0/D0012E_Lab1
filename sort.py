@@ -4,10 +4,6 @@ class Sort:
     def __init__(self):
         self.opcount = 0
 
-    #Outer 1 + 2 + 2
-    # Inner 4 
-    # 4*5=20*n
-
     def sortStack(self, inputStack):
         tempStack = Stack()
 
